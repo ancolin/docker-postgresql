@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  postgresql-96:
+    image:  ancolin/postgresql
+    volumes:
+    - /tmp:/var/lib/postgresql
