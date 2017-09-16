@@ -5,3 +5,6 @@ services:
     image:  ancolin/postgresql
     volumes:
     - /tmp:/var/lib/postgresql
+    environment:
+    - POSTGRES_ALLOW_IPADDRESS=
+    - POSTGRES_ALLOW_SUBNETMASK=
