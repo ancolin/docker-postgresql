@@ -2,7 +2,7 @@
 set -e
 
 case ${1} in
-  app:start|app:backup|app:debug)
+  app:start|app:debug)
 
     case ${1} in
       app:start)
@@ -22,11 +22,6 @@ case ${1} in
         pg_ctl start -w -D ${PGDATA}
         tail -f /dev/null
         ;;
-      app:backup)
-        backup_name="${PGDATA}_backup_$(date +'%Y%m%d%H%M%S')"
-        echo "backup PGDATA directory to ${backup_name}"
-        pg_basebackup -D ${backup_name}
-        ;;
       app:debug)
         tail -f /dev/null
         ;;
@@ -37,7 +32,6 @@ case ${1} in
   *)
     echo "Available options:"
     echo "  app:start - Start DB cluster."
-    echo "  app:backup - Backup DB cluster."
     ;;
 esac
 
