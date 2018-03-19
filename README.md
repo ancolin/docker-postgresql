@@ -1,8 +1,5 @@
 # Overview
 
-# Build
-`docker-compose build db`
-
 # Up
 `docker-compose up -d db`
 
