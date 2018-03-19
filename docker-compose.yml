@@ -1,10 +1,10 @@
-version: '2'
+version: '3'
 
 services:
-  postgresql-96:
-    image:  ancolin/postgresql
+  db:
+    build: .
+    image:  ancolin/postgresql:latest
     volumes:
-    - /tmp:/var/lib/postgresql
-    environment:
-    - POSTGRES_ALLOW_IPADDRESS=
-    - POSTGRES_ALLOW_SUBNETMASK=
+      - '.:/var/lib/postgresql'
+    ports:
+      - '5432:5432'
